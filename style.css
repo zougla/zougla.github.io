@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
 header {
@@ -40,7 +40,7 @@ nav a:active {
 }
 
 article {
-  line-height: 1.7;
+  line-height: 1.1;
 }
 
 main {
