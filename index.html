@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, interactive-widget=resizes-content">
+  <title>Zougla Webchat - irc.zougla.gr</title>
+  <meta name="description" content="Greek IRC Server by zougla.gr - Στο Ελληνικό chat του zougla.gr μπορείτε να επικοινωνείτε γρήγορα και εύκολα με ασφαλή τρόπο. Κάντε νέες γνωριμίες και φίλους." />
+  <link rel="alternate icon" href="/favicon.png">
+
+  <style>
+    :root{
+      --bg: #0f1115;
+      --panel: #161a21;
+      --muted: #9aa3ad;
+      --text: #e7eaf0;
+      --line: #242a33;
+      --accent: #9fc2ff;
+      --radius: 14px;
+      --shadow: 0 6px 24px rgba(0,0,0,.35);
+
+      --space-y: clamp(6px, 0.9vw, 14px);
+      --space-x: clamp(10px, 1.2vw, 18px);
+      --h1-size: clamp(0.95rem, 1rem + 0.2vw, 1.2rem);
+      --pill-size: clamp(0.55em, 0.6em + 0.2vw, 0.7em);
+      --footer-size: clamp(0.72rem, 0.74rem + 0.15vw, 0.85rem);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html, body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 1200px at 120% -10%, rgba(159,194,255,.12), transparent 60%),
+        radial-gradient(900px 900px at -20% 110%, rgba(159,194,255,.08), transparent 55%),
+        var(--bg);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior-y: contain;
+    }
+
+    header, footer{
+      background: linear-gradient(180deg, var(--panel), #12161c);
+      border-bottom:1px solid var(--line);
+      flex-shrink: 0;
+      text-align: center;
+    }
+    footer{
+      border-top:1px solid var(--line);
+      border-bottom:none;
+    }
+
+    .wrap{
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: var(--space-y) var(--space-x);
+    }
+
+    h1{
+      font-size: var(--h1-size);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: clamp(4px, 0.5vw, 8px);
+      line-height: 1.2;
+      flex-wrap: wrap;
+    }
+
+    h1 .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 2px 8px;
+      border-radius:999px;
+      background: rgba(159,194,255,.08);
+      color: var(--accent);
+      border:1px solid var(--line);
+      font-size: var(--pill-size);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (max-width: 420px){ h1 .pill{ display:none } }
+
+    main{
+      flex: 1 1 auto;
+      display: flex;
+      min-height: 0;
+    }
+
+    .chat-shell{
+      flex: 1;
+      display:flex;
+      width:100%;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#0b0e13;
+      box-shadow: var(--shadow);
+    }
+
+    iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+
+    footer .meta{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: clamp(6px, 0.6vw, 10px);
+      font-size: var(--footer-size);
+      line-height: 1.3;
+      color: var(--muted);
+    }
+    @media (max-width: 420px){
+      footer .meta{ gap:4px }
+      .meta .sponsor{ display:none }
+    }
+
+    a{ color: var(--accent); text-decoration:none }
+    a:hover{ text-decoration:underline }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>
+        Zougla Webchat - Greek IRC Server
+        <span class="pill">irc.zougla.gr</span>
+      </h1>
+    </div>
+  </header>
+
+  <main aria-label="Webchat">
+    <div class="chat-shell" role="region">
+      <iframe
+        src="https://kiwiirc.hybridirc.com/?theme=GrayFox#zougla"
+        allow="camera; microphone; display-capture; fullscreen"
+        allowfullscreen
+        title="Zougla Webchat">
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap meta">
+      <div>
+        © irc.zougla.gr 2026
+        <span class="sponsor">- Sponsored by HybridIRC Network</span> •
+        <a href="https://www.hybridirc.com/help/" target="_blank" rel="noopener">Help & Cmds</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

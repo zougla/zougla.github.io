@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, interactive-widget=resizes-content">
+  <title>Η σελίδα δεν βρέθηκε - irc.zougla.gr</title>
+  <link rel="alternate icon" href="/favicon.png">
+
+  <style>
+    :root {
+      --bg: #eceff3;
+      --surface: #ffffff;
+
+      --panel: #161a21;
+      --panel-dark: #12161c;
+
+      --text: #202328;
+      --line: #d9dee5;
+
+      --header-text: #e7eaf0;
+      --header-line: #242a33;
+
+      --accent: #4f7fd1;
+      --accent-light: #9fc2ff;
+
+      --grayfox: #858d98;
+      --grayfox-hover: #98a0aa;
+      --grayfox-active: #6f7782;
+      --grayfox-border: #7b838e;
+
+      --radius: 14px;
+
+      --space-y: clamp(6px, 0.9vw, 14px);
+      --space-x: clamp(10px, 1.2vw, 18px);
+      --h1-size: clamp(0.95rem, 1rem + 0.2vw, 1.2rem);
+      --pill-size: clamp(0.55em, 0.6em + 0.2vw, 0.7em);
+      --footer-size: clamp(0.72rem, 0.74rem + 0.15vw, 0.85rem);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+
+      font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        "Apple Color Emoji",
+        "Segoe UI Emoji";
+
+      color: var(--text);
+      background: var(--bg);
+      overscroll-behavior-y: contain;
+    }
+
+    header,
+    footer {
+      flex-shrink: 0;
+      color: var(--header-text);
+      text-align: center;
+      background: linear-gradient(180deg, var(--panel), var(--panel-dark));
+    }
+
+    header {
+      border-bottom: 1px solid var(--header-line);
+    }
+
+    footer {
+      border-top: 1px solid var(--header-line);
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-y) var(--space-x);
+    }
+
+    h1 {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: clamp(4px, 0.5vw, 8px);
+      font-size: var(--h1-size);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      color: var(--accent-light);
+      background: rgba(159, 194, 255, 0.08);
+      border: 1px solid var(--header-line);
+      border-radius: 999px;
+      font-size: var(--pill-size);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    main {
+      position: relative;
+      flex: 1 1 auto;
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      padding: clamp(22px, 5vw, 56px) 16px;
+      background:
+        radial-gradient(circle at 10% 18%, rgba(79, 127, 209, 0.08), transparent 26%),
+        radial-gradient(circle at 90% 82%, rgba(159, 194, 255, 0.10), transparent 28%),
+        linear-gradient(135deg, #f1f3f6 0%, #e9edf2 100%);
+      overflow: hidden;
+    }
+
+    .error-card {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 560px);
+      padding: 34px 38px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .error-card::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      content: "";
+      background: var(--grayfox);
+    }
+
+    .error-code {
+      margin-bottom: 16px;
+      color: var(--text);
+      font-size: clamp(4.5rem, 14vw, 7rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+    }
+
+    .divider {
+      position: relative;
+      width: min(100%, 340px);
+      height: 1px;
+      margin: 0 auto 24px;
+      background: #d6deea;
+    }
+
+    .divider::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      content: "";
+      background: var(--grayfox);
+      border: 5px solid var(--surface);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .error-message {
+      margin-bottom: 26px;
+      color: #2d3239;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .home-link,
+    .home-link:link,
+    .home-link:visited {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 22px;
+      color: #ffffff;
+      background: var(--grayfox);
+      border: 1px solid var(--grayfox-border);
+      border-radius: 9px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: none;
+      transform: none;
+      transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+      outline: none;
+      opacity: 1;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .home-link:hover,
+    .home-link:focus-visible {
+      background: var(--grayfox-hover);
+      border-color: #8c949f;
+    }
+
+    .home-link:active {
+      background: var(--grayfox-active);
+      border-color: #646c77;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
+    }
+
+    footer .meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: clamp(6px, 0.6vw, 10px);
+      color: #9aa3ad;
+      font-size: var(--footer-size);
+      line-height: 1.3;
+    }
+
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding: 18px 12px;
+      }
+
+      .error-card {
+        padding: 32px 20px;
+      }
+
+      .home-link {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 .pill {
+        display: none;
+      }
+
+      footer .meta {
+        gap: 4px;
+      }
+
+      .meta .sponsor {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>
+        Zougla Webchat - Greek IRC Server
+        <span class="pill">irc.zougla.gr</span>
+      </h1>
+    </div>
+  </header>
+
+  <main aria-labelledby="error-message">
+    <section class="error-card">
+      <div class="error-code" aria-hidden="true">404</div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <p class="error-message" id="error-message">
+        Δεν είναι δυνατή η εύρεση αυτής της σελίδας.
+      </p>
+
+      <a class="home-link" href="/">
+        Επιστροφή στην αρχική
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap meta">
+      <div>
+        © irc.zougla.gr 2026
+        <span class="sponsor">- Sponsored by HybridIRC Network</span> •
+        <a href="https://www.hybridirc.com/help/" target="_blank" rel="noopener noreferrer">Help & Cmds</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
